@@ -1,9 +1,9 @@
 ## WEEK 2 QUIZ
 ### Question 1
 Suppose I define the following function in R
-cube <- function(x, n) {
-        x^3
-}
+#### cube <- function(x, n) {
+####        x^3
+#### }
 What is the result of running
 cube(3)
 in R after defining this function?
