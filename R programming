@@ -8,3 +8,11 @@ cube <- function(x, n) {
 cube(3)
 #in R after defining this function?
 #Answer: The number 27 is returned
+
+### 2. Question 2
+The following code will produce a warning in R.
+x <- 1:10
+if(x > 5) {
+        x <- 0
+}
+
