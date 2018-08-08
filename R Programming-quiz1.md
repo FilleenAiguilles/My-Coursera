@@ -1,5 +1,5 @@
 ## WEEK 1 QUIZ
-### Question 1
+### 1. Question 1
 R was developed by statisticians working at
 
 Answer: The University of Auckland  (The R language was developed by Ross Ihaka and Robert Gentleman who were statisticians at the University of Auckland in New Zealand.)
