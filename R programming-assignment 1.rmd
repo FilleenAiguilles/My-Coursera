@@ -54,3 +54,4 @@ You can see some example output from this function below. The function that you 
 ```
 
 ```
+My third solution was inspired by the article from https://zenagiwa.wordpress.com/2016/06/08/r-programming-assignment-1/
