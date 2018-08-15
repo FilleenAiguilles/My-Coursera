@@ -1,4 +1,5 @@
-Data--The zip file containing the data can be downloaded here: https://d396qusza40orc.cloudfront.net/rprog%2Fdata%2Fspecdata.zip
+Data--The zip file containing the data can be downloaded here: 
+[specdata.zip] ([2.4MB]https://d396qusza40orc.cloudfront.net/rprog%2Fdata%2Fspecdata.zip)
 
 The zip file contains 332 comma-separated-value (CSV) files containing pollution monitoring data for fine particulate matter (PM) air pollution at 332 locations in the United States. Each file contains data from a single monitor and the ID number for each monitor is contained in the file name. For example, data for monitor 200 is contained in the file "200.csv". Each file contains three variables:
 
@@ -15,7 +16,7 @@ and returns the mean of the pollutant across all of the monitors, ignoring any m
 
 ## Solution:
 ```
-pollutantmean1 <- function(directory, pollutant, id= 1: 332) {
+pollutantmean <- function(directory, pollutant, id= 1: 332) {
     fullfiles <- list.files(directory, full.names = TRUE)
     dat <- data.frame()
     for (i in id) {
@@ -31,7 +32,7 @@ Write a function that reads a directory full of files and reports the number of 
 
 ## Solution:
 ```
-complete1 <- function(directory, id= 1: 332) {
+complete <- function(directory, id= 1: 332) {
     fullfiles <- list.files(directory, full.names = TRUE)
     nobs <- numeirc()
     for (i in id) {
@@ -52,6 +53,17 @@ You can see some example output from this function below. The function that you 
 
 ## Solution:
 ```
-
+corr <- function(directory, threshold = 0) {
+    fullfiles <- list.files(directory, full.names = TRUE)
+    dat <- numeric()
+    for (i in 1:332) {
+        files <- read.csv(fullfiles[i]) 
+        comp <- files[complete.cases(files),]
+        if (nrow(comp) > threshold) {
+            dat <- c(dat, cor(comp[["sulfate"]], comp[["nitrate"]]))
+        }
+    }
+    dat
+}
 ```
-My third solution was inspired by the article from https://zenagiwa.wordpress.com/2016/06/08/r-programming-assignment-1/
+The part 3 was really difficult for me. My solution was inspired by the article from https://zenagiwa.wordpress.com/2016/06/08/r-programming-assignment-1/
